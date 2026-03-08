@@ -21,5 +21,6 @@ class Program
         int rowsAffected = cmd.ExecuteNonQuery();
 
         Console.WriteLine($"✅ {rowsAffected} record(s) toegevoegd!");
+        UserLogin.Start();
     }
 }
