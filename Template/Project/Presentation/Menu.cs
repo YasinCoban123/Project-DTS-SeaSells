@@ -20,11 +20,11 @@ static class Menu
 
             if (answer == "1")
             {
-                // Store.Start(currentUser);
+                // Store.Start();
             }
             else if (answer == "2")
             {
-                // Orders.Start();
+                Store.Start();
             }
             else if (answer == "3")
             {
