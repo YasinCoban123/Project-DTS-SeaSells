@@ -1,12 +1,13 @@
 using Npgsql;
+using Microsoft.Data.Sqlite;
+
 using Dapper;
 
 
 public class UserAccountsAccess
 {
-    private NpgsqlConnection _connection = new NpgsqlConnection(
-        "Host=localhost;Port=5432;Username=postgres;Password=Mixels123;Database=postgres"
-    );
+    private SqliteConnection _connection =
+        new SqliteConnection("Data Source=DataSources/project.db");
 
     private string Table = "Account";
 
