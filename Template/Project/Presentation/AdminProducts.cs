@@ -31,6 +31,9 @@ public class AdminProducts
             Console.WriteLine();
             Console.WriteLine($"Name {product.ProductName}\nDescription {product.Description}\nPrice {product.Price}\n");
         }
+        Console.WriteLine("Press ENTER to continue");
+        Console.ReadLine();
+        Console.Clear();
     }
 
     public static void AddProducts()

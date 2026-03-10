@@ -27,8 +27,11 @@ public class AdminBestellingen
         List<BestellingModel> bestellingen = _logic.AllOrders();
         foreach(BestellingModel bestelling in bestellingen)
         {
-            Console.WriteLine($"ID: {bestelling.ProductId}\nPrice: {bestelling.ProductId}\nUser.Id: {bestelling.UserId}\n");
+            Console.WriteLine($"ID: {bestelling.ProductId}\nProduct Id: {bestelling.ProductId}\nUser.Id: {bestelling.UserId}\n");
         }
+        Console.WriteLine("Press ENTER to continue");
+        Console.ReadLine();
+        Console.Clear();
 
     }
 

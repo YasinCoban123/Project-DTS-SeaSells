@@ -4,6 +4,7 @@ static class UserLogin
 
     public static void Start()
     {
+        Console.Clear();
         Console.WriteLine();
         Console.WriteLine("Do you want to login or register a new account?");
         string accountchoice = Console.ReadLine();

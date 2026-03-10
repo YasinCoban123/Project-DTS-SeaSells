@@ -48,6 +48,7 @@ static class Menu
         AccountModel ?currentUser = AccountsLogic.CurrentAccount;
         while (true)
         {
+            Console.Clear();
             Console.WriteLine($"Welcome to the Main Menu Admin {currentUser.Name}");
             Console.WriteLine($"[1]Account");
             Console.WriteLine($"[2]Store");
