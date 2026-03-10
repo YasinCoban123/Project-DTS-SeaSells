@@ -1,8 +1,9 @@
 public class AdminProducts
 {
     private static ProductLogic _productlogic= new();
+    static List<ProductModel> producten => _productlogic.AllProducts();
 
-    public void Start()
+    public static void Start()
     {
         Console.Clear();
         Console.WriteLine("[1]See all products");
@@ -15,7 +16,7 @@ public class AdminProducts
                 SeeAllProducts();
                 break;
             case "2":
-                // AddProduct();
+                AddProducts();
                 break;
             case "3":
                 // DeleteProduct();
@@ -23,17 +24,16 @@ public class AdminProducts
         }
     }
 
-    public void SeeAllProducts()
+    public static void SeeAllProducts()
     {
-        List<ProductModel> producten = _productlogic.AllProducts();
         foreach(ProductModel product in producten)
         {
             Console.WriteLine();
-            Console.WriteLine("product");
+            Console.WriteLine($"Name {product.ProductName}\nDescription {product.Description}\nPrice {product.Price}\n");
         }
     }
 
-    public void AddProducts()
+    public static void AddProducts()
     {
         Console.Clear();
         Console.WriteLine("Give the name of a product");
@@ -54,6 +54,7 @@ public class AdminProducts
     
     public void DeleteProducts()
     {
+        Console.WriteLine("Give the ide");
         
     }
 }
