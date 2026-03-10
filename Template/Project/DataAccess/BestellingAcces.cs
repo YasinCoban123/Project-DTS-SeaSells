@@ -1,11 +1,12 @@
-using Microsoft.Data.Sqlite;
-
+using Npgsql;
 using Dapper;
 
 
 public class BestellingAccess
 {
-    private SqliteConnection _connection = new SqliteConnection($"Data Source=DataSources/project.db");
+    private NpgsqlConnection _connection = new NpgsqlConnection(
+        "Host=localhost;Port=5432;Username=postgres;Password=Mixels123;Database=postgres"
+    );
 
     private string Table = "Bestellingen";
 

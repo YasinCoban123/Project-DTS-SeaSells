@@ -11,13 +11,13 @@ public class ProductAccess
 
     public void Write(ProductModel product)
     {
-        string sql = $"INSERT INTO {Table} (email, password, name) VALUES (@Email, @Password, @Name)";
+        string sql = $"INSERT INTO {Table} (ProductName, Description, keywords, Price) VALUES (@ProductName, @Description, @keywords, @Price)";
         _connection.Execute(sql, product);
     }
 
     public void Update(ProductModel product)
     {
-        string sql = $"UPDATE {Table} SET email = @Email, password = @Password, name = @Name WHERE productid = @ProductId";
+        string sql = $"UPDATE {Table} SET ProductName = @ProductName, Description = @Description, keywords = @keywords, Price = @Price WHERE productid = @ProductId";
         _connection.Execute(sql, product);
     }
 

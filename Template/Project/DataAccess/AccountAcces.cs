@@ -1,17 +1,18 @@
-using Microsoft.Data.Sqlite;
-
+using Npgsql;
 using Dapper;
 
 
 public class UserAccountsAccess
 {
-    private SqliteConnection _connection = new SqliteConnection($"Data Source=DataSources/project.db");
+    private NpgsqlConnection _connection = new NpgsqlConnection(
+        "Host=localhost;Port=5432;Username=postgres;Password=Mixels123;Database=postgres"
+    );
 
     private string Table = "Account";
 
     public void Write(AccountModel account)
     {
-        string sql = $"INSERT INTO {Table} (email, password, name) VALUES (@Email, @Password, @Name)";
+        string sql = $"INSERT INTO {Table} (name, email, password) VALUES (@Name, @Email, @Password)";
         _connection.Execute(sql, account);
     }
 
@@ -23,7 +24,7 @@ public class UserAccountsAccess
 
     public void Update(AccountModel account)
     {
-        string sql = $"UPDATE {Table} SET email = @Email, password = @Password, name = @Name WHERE AccountId = @AccountId";
+        string sql = $"UPDATE {Table} SET email = @Email, password = @Password, name = @Name WHERE UserId = @UserId";
         _connection.Execute(sql, account);
     }
 

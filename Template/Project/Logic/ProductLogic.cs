@@ -7,4 +7,8 @@ public class ProductLogic
         return _access.GetAllProducts();
     }
 
+    public void AddAProduct(ProductModel product)
+    {
+        _access.Write(product);
+    }
 }

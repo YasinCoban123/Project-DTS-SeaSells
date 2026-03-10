@@ -22,11 +22,10 @@ public class AccountsLogic
 
         if (password == accountinfo.Password)
         {
-            AccountModel acc = _access.GetByEmail(email);
-            if (acc != null)
+            if (accountinfo != null)
             {
-                CurrentAccount = acc;
-                return acc;
+                CurrentAccount = accountinfo;
+                return accountinfo;
             }
         }
         return null;

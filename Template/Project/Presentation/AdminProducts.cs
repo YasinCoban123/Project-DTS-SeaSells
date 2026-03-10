@@ -36,9 +36,19 @@ public class AdminProducts
     public void AddProducts()
     {
         Console.Clear();
-        Console.WriteLine("");
-        Console.WriteLine();
-        Console.WriteLine();
+        Console.WriteLine("Give the name of a product");
+        string chosenname = Console.ReadLine();
+        Console.WriteLine($"Give a description for {chosenname}");
+        string chosendesc = Console.ReadLine();
+        Console.WriteLine("Give a few keywords to search for the product (Comma separated!)");
+        string chosenwords = Console.ReadLine();
+        Console.WriteLine("Give the price of the product");
+        string chosenprice = Console.ReadLine();
+        int chosenpriceint = Convert.ToInt32(chosenprice);
+
+        ProductModel newproduct = new ProductModel(chosenname, chosendesc, chosenwords, chosenpriceint);
+
+        _productlogic.AddAProduct(newproduct);
         
     }
     
