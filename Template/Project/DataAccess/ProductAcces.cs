@@ -3,7 +3,7 @@ using Dapper;
 
 public class ProductAccess
 {
-    private NpgsqlConnection _connection = new NpgsqlConnection(
+    private NpgsqlConnection _connection => new NpgsqlConnection(
         "Host=localhost;Port=5432;Username=postgres;Password=Mixels123;Database=postgres"
     );
 

@@ -62,7 +62,7 @@ static class Menu
             }
             else if (answer == "2")
             {
-                // Orders.Start();
+                AdminProducts.Start();
             }
             else if (answer == "3")
             {

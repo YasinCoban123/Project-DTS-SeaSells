@@ -5,7 +5,7 @@ using Dapper;
 public class UserAccountsAccess
 {
     private NpgsqlConnection _connection = new NpgsqlConnection(
-        "Host=localhost;Port=5432;Username=postgres;Password=Mixels123;Database=postgres"
+        "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=..."
     );
 
     private string Table = "Account";
