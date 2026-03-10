@@ -11,7 +11,7 @@ public class BestellingAccess
 
     public void Write(BestellingModel bestelling)
     {
-        string sql = $"INSERT INTO {Table} (email, password, name, price) VALUES (@Email, @Password, @Name, @Price)";
+        string sql = $"INSERT INTO {Table} (userid, productid) VALUES (@UserId, @ProductId)";
         _connection.Execute(sql, bestelling);
     }
 
@@ -34,9 +34,9 @@ public class BestellingAccess
         return _connection.Query<BestellingModel>(sql).ToList();
     }
 
-    public List<BestellingModel> GetById(long id)
+    public List<BestellingModel> GetById(long userId)
     {
-        string sql = $"SELECT * FROM {Table} WHERE BestellingId = @Id";
-        return _connection.Query<BestellingModel>(sql, new { Id = id }).ToList();
+        string sql = $"SELECT * FROM {Table} WHERE UserId = @UserId";
+        return _connection.Query<BestellingModel>(sql, new { UserId = userId }).ToList();
     }
 }
