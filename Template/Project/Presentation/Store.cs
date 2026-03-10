@@ -39,6 +39,7 @@ static class Store
 
     public static void AllProducts()
     {
+        Console.Clear();
         var products = storelogic.GetAllProducts();
 
         if (products.Count == 0)
@@ -47,6 +48,7 @@ static class Store
         }
         else
         {
+            Console.Clear();
             Console.WriteLine("All Products\n");
             foreach (var p in products)
             {
@@ -95,6 +97,7 @@ static class Store
         }
         else
         {
+            Console.Clear();
             Console.WriteLine("Results from search\n");
 
             foreach (var p in results)

@@ -21,9 +21,9 @@ public class StoreAcces
         {
             string sql = @"
             SELECT * FROM Product
-            WHERE LOWER(ProductName) = LOWER(@Word)
-            OR LOWER(Description) = LOWER(@Word)
-            OR LOWER(Keywords) = LOWER(@Word)";
+            WHERE LOWER(ProductName) LIKE '%' || LOWER(@Word) || '%'
+               OR LOWER(Description) LIKE '%' || LOWER(@Word) || '%'
+               OR LOWER(Keywords) LIKE '%' || LOWER(@Word) || '%'";
 
             var found = _connection.Query<ProductModel>(sql, new { Word = word }).ToList();
 

@@ -11,7 +11,7 @@ public class StoreLogic
     {
         if (string.IsNullOrEmpty(input))
         {
-            return new List<ProductModel>();
+            return default;
         }
 
         List<string> words = input.Split(" ").ToList();
