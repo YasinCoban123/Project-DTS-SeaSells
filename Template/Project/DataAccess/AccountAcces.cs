@@ -1,8 +1,6 @@
 using Npgsql;
 using Dapper;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-
 public class UserAccountsAccess
 {
     private readonly string _connectionString;
