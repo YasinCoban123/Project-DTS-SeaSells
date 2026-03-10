@@ -28,7 +28,45 @@ static class Menu
             }
             else if (answer == "3")
             {
-                // Reservations.Start();
+                Bestellingen.Start();
+            }
+            else if (answer == "4")
+            {
+                UserLogin.Start();
+            }
+            else if (answer == "5")
+            {
+                Environment.Exit(0);
+            }
+        }
+    }
+
+
+    static public void AdminStart()
+    {
+        AccountModel ?currentUser = AccountsLogic.CurrentAccount;
+        while (true)
+        {
+            Console.WriteLine($"Welcome to the Main Menu Admin {currentUser.Name}");
+            Console.WriteLine($"[1]Account");
+            Console.WriteLine($"[2]Store");
+            Console.WriteLine($"[3]All Orders");
+            Console.WriteLine($"[4]Logout");
+            Console.WriteLine($"[5]Quit");
+
+            string answer = Console.ReadLine().ToLower();
+
+            if (answer == "1")
+            {
+                // Store.Start(currentUser);
+            }
+            else if (answer == "2")
+            {
+                // Orders.Start();
+            }
+            else if (answer == "3")
+            {
+                AdminBestellingen.Start();
             }
             else if (answer == "4")
             {
