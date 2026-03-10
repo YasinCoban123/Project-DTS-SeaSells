@@ -3,12 +3,12 @@ using Dapper;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 
-public class AccountsAccess
+public class UserAccountsAccess
 {
     private readonly string _connectionString;
     private string Table = "Account";
 
-    public AccountsAccess()
+    public UserAccountsAccess()
     {
         // Lees connection string uit appsettings.json
         var configuration = new ConfigurationBuilder()
