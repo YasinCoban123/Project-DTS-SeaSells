@@ -1,4 +1,3 @@
-using Npgsql;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 
