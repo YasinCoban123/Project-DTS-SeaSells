@@ -24,6 +24,11 @@ static class UserLogin
                 {
                     Console.WriteLine("Login failed");
                 }
+                else if (acc.IsAdmin) 
+                {
+                    Console.WriteLine("Welcome back Admin" + acc.Name);
+                    Menu.AdminStart();
+                }
                 else
                 {
                     Console.WriteLine("Welcome back " + acc.Name);

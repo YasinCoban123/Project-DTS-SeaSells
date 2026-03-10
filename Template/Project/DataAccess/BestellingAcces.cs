@@ -21,10 +21,10 @@ public class BestellingAccess
         _connection.Execute(sql, account);
     }
 
-    public void Delete(AccountModel account)
+    public void Delete(BestellingModel bestelling)
     {
-        string sql = $"DELETE FROM {Table} WHERE UserId = @UserId";
-        _connection.Execute(sql, account);
+        string sql = $"DELETE FROM {Table} WHERE BestellingId = @BestellingId";
+        _connection.Execute(sql, bestelling);
     }
 
     public List<BestellingModel> GetAllOrders()

@@ -1,29 +1,30 @@
-using Microsoft.Data.Sqlite;
-
+using Npgsql;
 using Dapper;
 
 public class ProductAccess
 {
-    private SqliteConnection _connection = new SqliteConnection($"Data Source=DataSources/project.db");
+    private NpgsqlConnection _connection = new NpgsqlConnection(
+        "Host=localhost;Port=5432;Username=postgres;Password=Mixels123;Database=postgres"
+    );
 
-    private string Table = "Product";
+    private string Table = "product";
 
-    public void Write(BestellingModel bestelling)
+    public void Write(ProductModel product)
     {
         string sql = $"INSERT INTO {Table} (email, password, name) VALUES (@Email, @Password, @Name)";
-        _connection.Execute(sql, bestelling);
+        _connection.Execute(sql, product);
     }
 
-    public void Update(AccountModel account)
+    public void Update(ProductModel product)
     {
-        string sql = $"UPDATE {Table} SET email = @Email, password = @Password, name = @Name WHERE AccountId = @AccountId";
-        _connection.Execute(sql, account);
+        string sql = $"UPDATE {Table} SET email = @Email, password = @Password, name = @Name WHERE productid = @ProductId";
+        _connection.Execute(sql, product);
     }
 
-    public void Delete(AccountModel account)
+    public void Delete(ProductModel product)
     {
-        string sql = $"DELETE FROM {Table} WHERE UserId = @UserId";
-        _connection.Execute(sql, account);
+        string sql = $"DELETE FROM {Table} WHERE productid = @ProductId";
+        _connection.Execute(sql, product);
     }
 
     public List<ProductModel> GetAllProducts()
@@ -31,5 +32,4 @@ public class ProductAccess
         string sql = $"SELECT * FROM {Table}";
         return _connection.Query<ProductModel>(sql).ToList();
     }
-
 }
