@@ -11,7 +11,7 @@ public class BestellingLogic
     public List<BestellingModel> GetMyOrders()
     {
         long userId = AccountsLogic.CurrentAccount.UserId;
-        return _access.GetOrdersByUser(userId);
+        return _access.GetById(userId);
     }
 
     public void PlaceOrder()
